@@ -91,6 +91,10 @@ faiss_train_examples = pdf_subset.apply(
 
 # COMMAND ----------
 
+faiss_train_examples
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC
 # MAGIC ### Step 2: Vectorize text into embedding vectors

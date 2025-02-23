@@ -89,8 +89,7 @@ print("Run default language")
 
 # COMMAND ----------
 
-# MAGIC %python
-# MAGIC print("Run python")
+print("Run python")
 
 # COMMAND ----------
 
@@ -157,6 +156,14 @@ print("Run default language")
 # MAGIC When you ran the **Setup** cell at the top of the notebook, some variables were created for you. One of the variables is `DA.paths.datasets` which is the path to datasets which will be used during this course.
 # MAGIC
 # MAGIC One such dataset is located at **`{DA.paths.datasets}/news/labelled_newscatcher_dataset.csv`**. Let's use `pandas` to read that csv file.
+
+# COMMAND ----------
+
+DA.paths.datasets
+
+# COMMAND ----------
+
+display(dbutils.fs.ls(DA.paths.datasets))
 
 # COMMAND ----------
 

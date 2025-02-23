@@ -60,6 +60,8 @@
 
 from datasets import load_dataset
 from transformers import pipeline
+import pandas as pd
+import numpy as np
 
 # COMMAND ----------
 
@@ -93,6 +95,10 @@ xsum_dataset  # The printed representation of this object shows the `num_rows` o
 
 # COMMAND ----------
 
+type(xsum_dataset["train"])
+
+# COMMAND ----------
+
 xsum_sample = xsum_dataset["train"].select(range(10))
 display(xsum_sample.to_pandas())
 
@@ -117,6 +123,10 @@ summarizer = pipeline(
 
 # COMMAND ----------
 
+type(xsum_sample["document"])
+
+# COMMAND ----------
+
 # Apply to 1 article
 summarizer(xsum_sample["document"][0])
 
@@ -124,6 +134,10 @@ summarizer(xsum_sample["document"][0])
 
 # Apply to a batch of articles
 results = summarizer(xsum_sample["document"])
+
+# COMMAND ----------
+
+results
 
 # COMMAND ----------
 
@@ -174,6 +188,10 @@ sentiment_classifier = pipeline(
 # COMMAND ----------
 
 results = sentiment_classifier(poem_sample["verse_text"])
+
+# COMMAND ----------
+
+results
 
 # COMMAND ----------
 
